@@ -1,2 +1,8 @@
 # Polyglot_Files
 How to create a polyglot file that can run javascript inside a jpeg file
+
+The first thing I did was to read the documentation given by the professor. The reading on devcondetect.com was useful in obtaining a high level overview on what a polyglot file. It also explained how someone could execute javascript code inside an image file like a jpeg, png, or bmp. I also found the reading on hackaday.com to be useful in understanding stegosploits and steganography. 
+
+The first thing I did was choose a jpg image I wanted to manipulate and choose a hex editor which would allow me to change the hex code in the image file. For the purposes of this project the hex editor I chose was Hex Fiend since it is a popular and reliable tool. The first 4 bytes of the file were FFD8FFE0 and this I left untouched since these bytes identifed to the browser that this was a jpeg file. I then commented out all the code from JFIF to FFDB. FFDB represents the start of a quantization table which specifies how a jpeg is compressed. Immediately after the '*/' symbol I wrote '=window.open("https://www.youtube.com/watch?v=X4Zwpl7VbhA");'. This simple javascript command will open another window to the link specified. The final step in configuring the jpeg file was commenting out the rest of the code. 
+
+So now that I finished the jpeg file, I wrote a simple html file called test.html. I opened the html file in my browser and immedately another window opened up and the trailer for the new Joker movie started to play. This is what a polyglot file does. It allows an image file to hide javascript code that is executable. 
